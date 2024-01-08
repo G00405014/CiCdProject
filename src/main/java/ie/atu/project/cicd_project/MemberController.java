@@ -1,7 +1,10 @@
 package ie.atu.project.cicd_project;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,9 +32,14 @@ public class MemberController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public Member createMember(@RequestBody Member member) {
-        return memberService.saveMember(member);
+    @PostMapping("/createMember")
+    public ResponseEntity<?> create(@Valid @RequestBody Member member, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            // This will return the validation errors back to the client.
+            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+        }
+        memberService.saveMember(member);
+        return new ResponseEntity<>("Member created successfully", HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
