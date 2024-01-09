@@ -1,4 +1,4 @@
-package ie.atu.project.cicd_project;
+package ie.atu.project.cicd_project.RankingMicroService;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
