@@ -6,7 +6,7 @@ services:
       context: ./ie.atu.project.cicd_project/EventMicroService
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8085:8080"
 
   inventory-service:
     build:
