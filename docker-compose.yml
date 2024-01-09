@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'mydatabase'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
   event-service:
     build:
       context: ./ie.atu.project.cicd_project/EventMicroService
@@ -35,18 +48,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8084:8080"
-
-  mysql-database:
-    image: mysql:latest
-    environment:
-      MYSQL_DATABASE: 'mydatabase'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
-    ports:
-      - "3306:3306"
-    volumes:
-      - db-data:/var/lib/mysql
 
   h2-database:
     image: oscarfonts/h2
