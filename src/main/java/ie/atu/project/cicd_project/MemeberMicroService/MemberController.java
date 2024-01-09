@@ -1,4 +1,4 @@
-package ie.atu.project.cicd_project;
+package ie.atu.project.cicd_project.MemeberMicroService;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

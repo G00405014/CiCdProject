@@ -1,4 +1,4 @@
-package ie.atu.project.cicd_project;
+package ie.atu.project.cicd_project.InventoryMicroService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

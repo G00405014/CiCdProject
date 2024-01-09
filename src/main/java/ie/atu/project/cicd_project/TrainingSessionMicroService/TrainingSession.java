@@ -1,4 +1,4 @@
-package ie.atu.project.cicd_project;
+package ie.atu.project.cicd_project.TrainingSessionMicroService;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

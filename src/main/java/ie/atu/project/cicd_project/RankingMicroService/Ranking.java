@@ -1,4 +1,4 @@
-package ie.atu.project.cicd_project;
+package ie.atu.project.cicd_project.RankingMicroService;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
