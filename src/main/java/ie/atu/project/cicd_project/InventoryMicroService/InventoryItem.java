@@ -26,5 +26,4 @@ public class InventoryItem {
     @NotNull(message = "Quantity cannot be null")
     private Integer quantity;
 
-    // Additional methods and fields can be added as needed
 }
